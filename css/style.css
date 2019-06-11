@@ -10,13 +10,13 @@ body {
   font-size: 1.2em;
 }
 
-div {
-  background-color: grey;
-}
-
 h1{
   font-family: sans-serif;
   font-size: 2em;
+}
+
+nav {
+  background: linear-gradient(to bottom, #ff9966 0%, #00ccff 100%);
 }
 
 nav.li {
