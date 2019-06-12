@@ -66,15 +66,43 @@ Franchise.prototype.render = function () {
   tableBody.appendChild(tableRow);
 };
 
+//////////////////////
+//Start of hourly totals attempts
+// For each hours[i] sum the corresponding [i] in each object's cookiesPerHour
+// sum franchises.cookiesPerHour[i]
+// add cell at the corresponding hours[i] column
+
+
+
+//Second attempt
+var sum = 0;
+var totalPerHour = [];
+
+Franchise.cookiesPerHour.prototype.render = function () {
+  var tableFooter = document.getElementById('franchisesHourlyData');
+  var tableRow = document.createElement('tr');
+  for (var i = 0; i < hours.length; i++) {
+    var cell = document.createElement('td');
+    cell.textContent = this.totalPerHour[i];
+    tableRow.appendChild(cell);
+  }
+  var cellTotal = document.createElement('td');
+  cellTotal.textContent = this.totalDaysCookies;
+  tableRow.appendChild(cellTotal);
+  tableBody.appendChild(tableRow);
+};
+
+//End of hourly totals attempts
+//////////////////////
+
+
 var pageUpdate = function() {
   for (var i = 0; i < franchises.length; i++)
     franchises[i].render();
+  var hourlySum = franchises[1].cookiesPerHour;
+  sum += hourlySum;
+  totalPerHour.push(sum);
 };
 
 pageUpdate();
 
-// // var today = newDate();
-// // var year = today.getFullYear();
-
-// // var el = document.getElementById('footer');
-// // el.innerHTML = '<p>Copyright &copy;' + year + '</P>';
