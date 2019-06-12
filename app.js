@@ -44,6 +44,9 @@ var hoursRender = function() {
     cell.textContent = hours[i];
     tableRow.appendChild(cell);
   }
+  var cellTotal = document.createElement('td');
+  cellTotal.textContent = 'Total';
+  tableRow.appendChild(cellTotal);
   tableBody.appendChild(tableRow);
 };
 
@@ -57,18 +60,18 @@ Franchise.prototype.render = function () {
     cell.textContent = this.cookiesPerHour[i];
     tableRow.appendChild(cell);
   }
+  var cellTotal = document.createElement('td');
+  cellTotal.textContent = this.totalDaysCookies;
+  tableRow.appendChild(cellTotal);
   tableBody.appendChild(tableRow);
 };
 
 var pageUpdate = function() {
-  pike.render();
-  seaTac.render();
-  seattle.render();
-  capitol.render();
-  alki.render();
+  for (var i = 0; i < franchises.length; i++)
+    franchises[i].render();
 };
 
-// pageUpdate();
+pageUpdate();
 
 // // var today = newDate();
 // // var year = today.getFullYear();
