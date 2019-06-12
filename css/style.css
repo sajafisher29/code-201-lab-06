@@ -53,3 +53,25 @@ stream {
   height: 75%;
   position: relative;
 }
+
+table {
+  margin: auto;
+  width: 75%;
+}
+
+th {
+  font-weight: bold;
+  padding: .4 em;
+}
+
+td {
+  padding: .25em;
+}
+
+tr {
+  border
+}
+
+tr:nth-child(even) {
+  
+}
