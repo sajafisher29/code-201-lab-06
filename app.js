@@ -76,13 +76,11 @@ Franchise.prototype.render = function () {
   var cell = document.createElement('td');
   cell.textContent = this.location;
   tableRow.appendChild(cell);
-  tableBody.appendChild(tableRow);
   
   for (var i = 0; i < hours.length; i++) {
     cell = document.createElement('td');
     cell.textContent = this.cookiesPerHourArray[i];
     tableRow.appendChild(cell);
-    tableBody.appendChild(tableRow);
   }
   cell = document.createElement('td');
   cell.textContent = this.totalDaysCookies;
@@ -92,20 +90,18 @@ Franchise.prototype.render = function () {
 
 //Renders the totals by hour, sums, then total of the franchise totals
 
+var tableFooter = document.getElementById('franchiseHourlyTotals');
 var totalByHourRender = function() {
-  var tableFooter = document.getElementById('franchiseHourlyTotals');
   var tableRow = document.createElement('tr');
   
   var cell = document.createElement('td');
   cell.textContent = 'Totals By Hour';
   tableRow.appendChild(cell);
-  tableFooter.appendChild(tableRow);
   
   for (var i = 0; i < hours.length; i++) {
     cell = document.createElement('td');
     cell.textContent = totalCookiesByHour[i];
     tableRow.appendChild(cell);
-    tableFooter.appendChild(tableRow);
   }
   cell = document.createElement('td');
   cell.textContent = '';
@@ -126,16 +122,12 @@ var alki = new Franchise('Alki', 2, 16, 4.6);
 function sumCookiesAcrossFranchises () {
   for (var i = 0; i < hours.length; i++) {
     var sumOfHour = 0;
-    console.log(hours[i]);
 
     for (var j = 0; j < franchises.length; j++) {
-      console.log(franchises[j].cookiesPerHourArray[i], 'cookies sold at store');
       sumOfHour += franchises[j].cookiesPerHourArray[i];
-      console.log(sumOfHour, 'current total cookies sold for the hour');
     }
 
     totalCookiesByHour.push(sumOfHour);
-    console.log(totalCookiesByHour);
   }
 }
 
@@ -156,27 +148,27 @@ pageUpdate();
 //Coding the event listener and handler
 var form = document.getElementById('franchiseForm');
 
-var franLocation = document.getElementById('franLocation');
 
-var franMinCust = document.getElementById('franMinCust');
 
-var franMaxCust = document.getElementById('franMaxCust');
-
-var franAveCust = document.getElementById('franAveCust');
-
-form.addEventListener('submit', function(event) {
+var addFranchise = function(event) {
   event.preventDefault();
+  console.log(event.target.franLocation.value);
+  var franLocation = event.target.franLocation.value;
+  
+  var franMinCust = parseInt(event.target.franMinCust.value);
+  
+  var franMaxCust = parseInt(event.target.franMaxCust.value);
+  
+  var franAveCust = parseInt(event.target.franAveCust.value);
+  
+  new Franchise(franLocation, franMinCust, franMaxCust, franAveCust);
+  
+  franchises[franchises.length-1].render();
 
-  var tableBody = document.createElement('franchiseData.');
-  var tableRow = document.createElement('tr');
-  var cell = document.createElement('td');
-  cell.textContent = franLocation();
-  tableRow.appendChild(cell);
-  cell.textContent = franMinCust();
-  tableRow.appendChild(cell);
-  cell.textContent = franMaxCust();
-  tableRow.appendChild(cell);
-  cell.textContent = franAveCust();
-  tableRow.appendChild(cell);
-  tableBody.appendChild(tableRow);
-});
+  tableFooter.deleteRow(tableFooter.rows.length-1);
+  
+  totalByHourRender();
+};
+
+
+form.addEventListener('submit', addFranchise);
