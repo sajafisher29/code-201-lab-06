@@ -8,9 +8,6 @@ var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '
 
 var franchises = [];
 
-//Array to hold the calculated total cookies by hour
-
-var totalCookiesByHour = [];
 
 
 //Object constructor used to create franchises
@@ -26,7 +23,9 @@ function Franchise(location, minCust, maxCust, avgCookie) {
   franchises.push(this);
 }
 
-console.log(franchises);
+//Array to hold the calculated total cookies by hour
+
+var totalCookiesByHour = [];
 
 //Generates a random number between the min and max inclusive
 
