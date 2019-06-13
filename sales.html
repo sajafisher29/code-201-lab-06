@@ -22,22 +22,37 @@
           </nav>
       <h1>Pat's Salmon Cookies</h1>
     </header>
-    <!-- The hours will be the head of the columns -->
-    <table>
-      <thead id="franchiseHead">
-      </thead>
 
-      <tbody id="franchisesData">
+     <div id="store">
 
-      <tfoot id="franchiseHourlyTotals"></tfoot>
-      </tbody>
-    </table>
+      <table>
 
-    <div id="store">
+        <thead id="franchiseHead"></thead>
 
+        <tbody id="franchisesData"></tbody>
+
+        <tfoot id="franchiseHourlyTotals"></tfoot>
+
+      </table>
+
+    </div>
+      
+    <div>
+      <form id = "franchiseForm">
+        <fieldset>
+          <legend>Franchise Form</legend>
+          <input id = "franLocation" name = "addName" type = "text" placeholder = "Franchise Location"/>
+          <input id = "franMinCust" name = "addMinCust" type = "number" placeholder = "Minimum"/>
+          <input id = "franMaxCust" name = "addMaxCust" type = "number" placeholder = "Maximum"/>
+          <input id = "franAveCust" name = "addAveCust" type = "number" placeholder = "Average"/>
+          <input type="submit" name = "submitNewFran" value = "Add Franchise"/>
+        </fieldset>
+      </form>
+    </div>
   </main>
-
+<div>
   <footer>Everyone loves salmon!</footer>
+</div>
 
   <script src="./app.js" type="text/javascript"></script>
 

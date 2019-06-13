@@ -153,3 +153,30 @@ hoursRender();
 totalByHourRender();
 pageUpdate();
 
+//Coding the event listener and handler
+var form = document.getElementById('franchiseForm');
+
+var franLocation = document.getElementById('franLocation');
+
+var franMinCust = document.getElementById('franMinCust');
+
+var franMaxCust = document.getElementById('franMaxCust');
+
+var franAveCust = document.getElementById('franAveCust');
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  var tableBody = document.createElement('franchiseData.');
+  var tableRow = document.createElement('tr');
+  var cell = document.createElement('td');
+  cell.textContent = franLocation();
+  tableRow.appendChild(cell);
+  cell.textContent = franMinCust();
+  tableRow.appendChild(cell);
+  cell.textContent = franMaxCust();
+  tableRow.appendChild(cell);
+  cell.textContent = franAveCust();
+  tableRow.appendChild(cell);
+  tableBody.appendChild(tableRow);
+});
