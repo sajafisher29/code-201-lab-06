@@ -8,35 +8,64 @@
 </head>
 
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li>Home</li>
-        <li>Products</li>
-        <li>Locations</li>
-        <li>About</li>
-        <li>Contact</li>
-      </ul>
-    </nav>
+  <section>
+    <header id = "navBar">
       <h1>Pat's Salmon Cookies</h1>
+      <h2>Everyone Loves Salmon!</h2>
     </header>
-    
+
+  </section>
+
     <main>
-      <div>
+
+      <section>
+
         <p>Thank you for visiting Pat's Salmon Cookies! We are happy to have you here and look forward to getting your feedback on our wonderful cookies! Our ingredients are locally sourced and we do our best to choose from sustainable fisheries partnering with local small businesses.</p>
+          
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'Products')" id="defaultOpen">Products</button>
+            <button class="tablinks" onclick="openTab(event, 'Buy Now')">Buy Now</button>
+            <button class="tablinks" onclick="openTab(event, 'Meet the team')">Meet the team</button>
+            <button class="tablinks" onclick="openTab(event, 'Contact Us')">Contact Us</button>
+        </div>
+          
+        <div id="Products" class="tabcontent">
+          <h2>Check out our cool stuff!</h2>
+          <p>Want to buy cookies? Or rep our cool new shirts? We also have cookie cutters!</p>
+          <h3>Cookies</h3>
+          <p> <img src="./images/frosted-cookie.jpg" alt="Salmon cookie"></p>
+          <h3>T-shirts</h3>
+          <p> <img src="./images/shirt.jpg" alt="Salmon t-shirt"></p>
+          <h3>Cookie cutters</h3>
+          <p> <img src="./images/cookie-cutter.jpeg" alt="Salmon shaped cookie cutter"></p>
+        </div>
+        
+        <div id="Buy Now" class="tabcontent">
+          <p>Ready to put in your order? Let's walk through the process and get your goodies on the road!</p> 
+        </div>
+        
+        <div id="Meet the team" class="tabcontent">
+          <p>We may have started as a team but we feel like a family!</p>
+          <p> <img src="./images/family.jpg" alt="Picture of our family"></p>
+          <p> <img src="./images/chinook.jpg" alt="Chinook salmon"></p>
+          <p>Quinnat was the inspiration and start of our amazing journey to this point. Quinnat found us while we were camping at Point Hope, Alaska. We got caught in a storm and Quinnat became the only food we had for two days! In their honor we hope you enjoy the salmon products as much as we do.</p> 
+        </div>
+
+        <div id="Contact Us" class="tabcontent">
+            <p>We would love to hear from you!</p>
+        </div>
+
         <p>If you would like to book a tour of our kitchen please contact us at <hred='mailto: ></hred></p>
-      </div>
+
+      </section>
+      
       
     </main>
     
+    <p>Everyone loves salmon!</p>
+    
     <footer>
-
-      <div>
-      
-        <p>Everyone loves salmon!</p>
-
-      </div>
-
+      <div class="stream"></div>
     </footer>
 
   <script src="app.js" type="text/javascript"></script>
