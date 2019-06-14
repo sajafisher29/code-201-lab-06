@@ -48,12 +48,12 @@ Franchise.cookiesPerHour = function (franchiseObject) {
 var hoursRender = function() {
   var tableHead = document.getElementById('franchiseHead');
   var tableRow = document.createElement('tr');
-  
+
   var cell = document.createElement('th');
   cell.textContent = '';
   tableRow.appendChild(cell);
   tableHead.appendChild(tableRow);
-  
+
   for (var i = 0; i < hours.length; i++) {
     cell = document.createElement('th');
     cell.textContent = hours[i];
@@ -71,11 +71,11 @@ var hoursRender = function() {
 Franchise.prototype.render = function () {
   var tableBody = document.getElementById('franchisesData');
   var tableRow = document.createElement('tr');
-  
+
   var cell = document.createElement('td');
   cell.textContent = this.location;
   tableRow.appendChild(cell);
-  
+
   for (var i = 0; i < hours.length; i++) {
     cell = document.createElement('td');
     cell.textContent = this.cookiesPerHourArray[i];
@@ -92,11 +92,11 @@ Franchise.prototype.render = function () {
 var tableFooter = document.getElementById('franchiseHourlyTotals');
 var totalByHourRender = function() {
   var tableRow = document.createElement('tr');
-  
+
   var cell = document.createElement('td');
   cell.textContent = 'Totals By Hour';
   tableRow.appendChild(cell);
-  
+
   for (var i = 0; i < hours.length; i++) {
     cell = document.createElement('td');
     cell.textContent = totalCookiesByHour[i];
@@ -153,21 +153,41 @@ var addFranchise = function(event) {
   event.preventDefault();
   console.log(event.target.franLocation.value);
   var franLocation = event.target.franLocation.value;
-  
+
   var franMinCust = parseInt(event.target.franMinCust.value);
-  
+
   var franMaxCust = parseInt(event.target.franMaxCust.value);
-  
+
   var franAveCust = parseInt(event.target.franAveCust.value);
-  
+
   new Franchise(franLocation, franMinCust, franMaxCust, franAveCust);
-  
+
   franchises[franchises.length-1].render();
 
   tableFooter.deleteRow(tableFooter.rows.length-1);
-  
+
   totalByHourRender();
 };
 
 
 form.addEventListener('submit', addFranchise);
+
+//js for index page
+function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
+
+  tabcontent = document.getElementsByClassName('tabcontent');
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = 'none';
+  }
+
+  tablinks = document.getElementsByClassName('tablinks');
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(' active', '');
+  }
+
+  document.getElementById(tabName).style.display = 'block';
+  evt.currentTarget.className += ' active';
+}
+
+document.getElementById("defaultOpen").click();

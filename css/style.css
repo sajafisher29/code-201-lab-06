@@ -1,29 +1,96 @@
 * {
   text-align: center;
-  cursor: url(../images/salmon.png), auto;
+  cursor: url(../images/right-cursor-salmon.png), auto;
+  box-sizing: border-box;
 }
 
 body {
+  background: linear-gradient(to top, #ffffff 50%, #66996d 100%);
+  background-size: 100%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   font-family: sans-serif;
   font-size: 1.2em;
-  background: linear-gradient(to right, #cc0000 0%, #33cc33 15%);
+  width: 825px;
+  margin: auto;
 }
 
-h1{
+main {
+  word-wrap: break-word;
+}
+
+header {
   font-family: sans-serif;
-  font-size: 2em;
+  font-size: 1.4em;
+  padding: 5px;
+  background-color: #79aa7f;
+  position: center;
+  display: block;
+  height: 50px;
+  top: 0;
+
 }
 
-nav.li {
-display: inline;
-margin-left: 10px;
+h1 {
+  font-size: 190%;
+  color: rgb(221, 66, 66);
+}
+
+h2 {
+  font-size: 140%;
+  color: rgb(221, 66, 66);
+}
+
+body > section {
+  padding-bottom: 10%;
+}
+
+p {
+  margin-bottom: 5%;
 }
 
 footer {
   background-image: url(../images/stream.jpg);
-  width:300px;
-  height: 101.5px;
   background-repeat: repeat-x;
+  position: fixed;
+  bottom: 0;
+  height: 150px;
+  width: 825px;
+}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #66996d;
+  background-color: #66996d;
+  margin: auto;
+}
+
+.tab button {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: rgb(221, 66, 66);
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: rgb(233, 106, 106);
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid rgb(208, 231, 192);
+  border-top: none;
+  background-color: rgb(208, 231, 192);
 }
 
 table {
@@ -42,8 +109,4 @@ td {
 
 tr {
   border
-}
-
-tr:nth-child(even) {
-  
 }
