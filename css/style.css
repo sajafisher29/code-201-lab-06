@@ -2,18 +2,9 @@
   text-align: center;
   cursor: url(../images/right-cursor-salmon.png), auto;
   box-sizing: border-box;
-  font: glacial 
+  font: glacial-indifference;
   font-family: sans-serif;
 }
-
-@font-face {
-  font-family: "Harabara Bold";
-  src: url("css/fonts/Harabara.eot");
-  src: 
-  url("css/fonts/Harabara.woff") format("woff"),
-  url("css/fonts/Harabara.otf") format("opentype"),
-  url("css/fonts/Harabara.svg#filename") format("svg");
-  }
 
 body {
   background: linear-gradient(to top, #ffffff 50%, #66996d 100%);
@@ -33,7 +24,6 @@ main {
 header {
   font-size: 1.4em;
   padding: 5px;
-  background-color: #79aa7f;
   position: center;
   display: block;
   height: 50px;
@@ -102,11 +92,24 @@ footer {
   border: 1px solid rgb(208, 231, 192);
   border-top: none;
   background-color: rgb(208, 231, 192);
+  overflow: auto;
 }
 
-table {
+#family {
+  width: 80%;
+}
+
+#salesHeader {
+  font-size: 1.4em;
+  padding: 5px;
+  position: center;
+  display: block;
+  height: 125px;
+  top: 0;
+}
+#store {
   margin: auto;
-  width: 75%;
+  display: block;
 }
 
 th {
@@ -118,6 +121,3 @@ td {
   padding: .25em;
 }
 
-tr {
-  border
-}
