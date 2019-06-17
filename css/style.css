@@ -43,7 +43,7 @@ h2 {
 }
 
 body > section {
-  padding-bottom: 10%;
+  margin-bottom: 10%;
 }
 
 p {
@@ -57,6 +57,7 @@ footer {
   bottom: 0;
   height: 150px;
   width: 825px;
+  display: block;
 }
 
 .tab {
@@ -84,7 +85,7 @@ footer {
 .tab button.active {
   background-color: rgb(233, 106, 106);
 }
-
+  
 /* Style the tab content */
 .tabcontent {
   display: none;
@@ -92,7 +93,8 @@ footer {
   border: 1px solid rgb(208, 231, 192);
   border-top: none;
   background-color: rgb(208, 231, 192);
-  overflow: auto;
+  overflow-y: auto;
+  height: 100px;
 }
 
 #family {
@@ -121,3 +123,6 @@ td {
   padding: .25em;
 }
 
+fieldset {
+  cursor: pointer;
+}
